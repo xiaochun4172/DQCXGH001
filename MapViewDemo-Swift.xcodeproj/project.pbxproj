@@ -16,6 +16,29 @@
 		3E15A1691AE84FC400A7D40D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E15A1681AE84FC400A7D40D /* libc++.dylib */; };
 		3E15A16B1AE852F300A7D40D /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3E15A16A1AE852F300A7D40D /* ArcGIS.bundle */; };
 		5238C936202D81A60084CAEB /* XCUISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5238C935202D81A60084CAEB /* XCUISegmentedControl.swift */; };
+		5264002D2091FD5500F667AE /* 莫干山电子地图.geodatabase in Resources */ = {isa = PBXBuildFile; fileRef = 5264002B2091FD5500F667AE /* 莫干山电子地图.geodatabase */; };
+		5264002E2091FD5500F667AE /* 莫干山.geodatabase in Resources */ = {isa = PBXBuildFile; fileRef = 5264002C2091FD5500F667AE /* 莫干山.geodatabase */; };
+		5264006F2092091900F667AE /* TRA_NET_LN_P.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 5264005A2092091700F667AE /* TRA_NET_LN_P.dbf */; };
+		526400702092091900F667AE /* TRA_NET_LN_P.sbn in Resources */ = {isa = PBXBuildFile; fileRef = 5264005B2092091700F667AE /* TRA_NET_LN_P.sbn */; };
+		526400712092091900F667AE /* TRA_NET_LN_P.sbx in Resources */ = {isa = PBXBuildFile; fileRef = 5264005C2092091700F667AE /* TRA_NET_LN_P.sbx */; };
+		526400722092091900F667AE /* TRA_NET_LN_P.shp.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5264005D2092091700F667AE /* TRA_NET_LN_P.shp.xml */; };
+		526400732092091900F667AE /* POI_P.sbx in Resources */ = {isa = PBXBuildFile; fileRef = 5264005E2092091800F667AE /* POI_P.sbx */; };
+		526400742092091900F667AE /* BOU_PY_P.sbx in Resources */ = {isa = PBXBuildFile; fileRef = 5264005F2092091800F667AE /* BOU_PY_P.sbx */; };
+		526400752092091900F667AE /* TRA_NET_LN_P.prj in Resources */ = {isa = PBXBuildFile; fileRef = 526400602092091800F667AE /* TRA_NET_LN_P.prj */; };
+		526400762092091900F667AE /* BOU_PY_P.shx in Resources */ = {isa = PBXBuildFile; fileRef = 526400612092091800F667AE /* BOU_PY_P.shx */; };
+		526400772092091900F667AE /* BOU_PY_P.shp.xml in Resources */ = {isa = PBXBuildFile; fileRef = 526400622092091800F667AE /* BOU_PY_P.shp.xml */; };
+		526400782092091900F667AE /* BOU_PY_P.shp in Resources */ = {isa = PBXBuildFile; fileRef = 526400632092091800F667AE /* BOU_PY_P.shp */; };
+		526400792092091900F667AE /* TRA_NET_LN_P.shp in Resources */ = {isa = PBXBuildFile; fileRef = 526400642092091800F667AE /* TRA_NET_LN_P.shp */; };
+		5264007A2092091900F667AE /* POI_P.shp.xml in Resources */ = {isa = PBXBuildFile; fileRef = 526400652092091800F667AE /* POI_P.shp.xml */; };
+		5264007B2092091900F667AE /* TRA_NET_LN_P.shx in Resources */ = {isa = PBXBuildFile; fileRef = 526400662092091800F667AE /* TRA_NET_LN_P.shx */; };
+		5264007C2092091900F667AE /* POI_P.shp in Resources */ = {isa = PBXBuildFile; fileRef = 526400672092091800F667AE /* POI_P.shp */; };
+		5264007D2092091900F667AE /* POI_P.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 526400682092091800F667AE /* POI_P.dbf */; };
+		5264007E2092091900F667AE /* POI_P.sbn in Resources */ = {isa = PBXBuildFile; fileRef = 526400692092091800F667AE /* POI_P.sbn */; };
+		5264007F2092091900F667AE /* BOU_PY_P.prj in Resources */ = {isa = PBXBuildFile; fileRef = 5264006A2092091800F667AE /* BOU_PY_P.prj */; };
+		526400802092091900F667AE /* BOU_PY_P.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 5264006B2092091800F667AE /* BOU_PY_P.dbf */; };
+		526400812092091900F667AE /* BOU_PY_P.sbn in Resources */ = {isa = PBXBuildFile; fileRef = 5264006C2092091800F667AE /* BOU_PY_P.sbn */; };
+		526400822092091900F667AE /* POI_P.prj in Resources */ = {isa = PBXBuildFile; fileRef = 5264006D2092091900F667AE /* POI_P.prj */; };
+		526400832092091900F667AE /* POI_P.shx in Resources */ = {isa = PBXBuildFile; fileRef = 5264006E2092091900F667AE /* POI_P.shx */; };
 		5294AECC203EDD0F0050A4CE /* CompassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294AECB203EDD0F0050A4CE /* CompassButton.swift */; };
 		5294AED0203EE4070050A4CE /* compass1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5294AECF203EE4070050A4CE /* compass1.png */; };
 		52A1C4C3202C7A0100D65863 /* XCUIViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A1C4C2202C7A0000D65863 /* XCUIViewButton.m */; };
@@ -41,6 +64,29 @@
 		3E15A1681AE84FC400A7D40D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		3E15A16A1AE852F300A7D40D /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = $HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<absolute>"; };
 		5238C935202D81A60084CAEB /* XCUISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUISegmentedControl.swift; sourceTree = "<group>"; };
+		5264002B2091FD5500F667AE /* 莫干山电子地图.geodatabase */ = {isa = PBXFileReference; lastKnownFileType = file; name = "莫干山电子地图.geodatabase"; path = "GeoDataBase/莫干山电子地图.geodatabase"; sourceTree = SOURCE_ROOT; };
+		5264002C2091FD5500F667AE /* 莫干山.geodatabase */ = {isa = PBXFileReference; lastKnownFileType = file; name = "莫干山.geodatabase"; path = "GeoDataBase/莫干山.geodatabase"; sourceTree = SOURCE_ROOT; };
+		5264005A2092091700F667AE /* TRA_NET_LN_P.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRA_NET_LN_P.dbf; sourceTree = "<group>"; };
+		5264005B2092091700F667AE /* TRA_NET_LN_P.sbn */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRA_NET_LN_P.sbn; sourceTree = "<group>"; };
+		5264005C2092091700F667AE /* TRA_NET_LN_P.sbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRA_NET_LN_P.sbx; sourceTree = "<group>"; };
+		5264005D2092091700F667AE /* TRA_NET_LN_P.shp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TRA_NET_LN_P.shp.xml; sourceTree = "<group>"; };
+		5264005E2092091800F667AE /* POI_P.sbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = POI_P.sbx; sourceTree = "<group>"; };
+		5264005F2092091800F667AE /* BOU_PY_P.sbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOU_PY_P.sbx; sourceTree = "<group>"; };
+		526400602092091800F667AE /* TRA_NET_LN_P.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TRA_NET_LN_P.prj; sourceTree = "<group>"; };
+		526400612092091800F667AE /* BOU_PY_P.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOU_PY_P.shx; sourceTree = "<group>"; };
+		526400622092091800F667AE /* BOU_PY_P.shp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BOU_PY_P.shp.xml; sourceTree = "<group>"; };
+		526400632092091800F667AE /* BOU_PY_P.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOU_PY_P.shp; sourceTree = "<group>"; };
+		526400642092091800F667AE /* TRA_NET_LN_P.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRA_NET_LN_P.shp; sourceTree = "<group>"; };
+		526400652092091800F667AE /* POI_P.shp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = POI_P.shp.xml; sourceTree = "<group>"; };
+		526400662092091800F667AE /* TRA_NET_LN_P.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRA_NET_LN_P.shx; sourceTree = "<group>"; };
+		526400672092091800F667AE /* POI_P.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = POI_P.shp; sourceTree = "<group>"; };
+		526400682092091800F667AE /* POI_P.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = POI_P.dbf; sourceTree = "<group>"; };
+		526400692092091800F667AE /* POI_P.sbn */ = {isa = PBXFileReference; lastKnownFileType = file; path = POI_P.sbn; sourceTree = "<group>"; };
+		5264006A2092091800F667AE /* BOU_PY_P.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BOU_PY_P.prj; sourceTree = "<group>"; };
+		5264006B2092091800F667AE /* BOU_PY_P.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOU_PY_P.dbf; sourceTree = "<group>"; };
+		5264006C2092091800F667AE /* BOU_PY_P.sbn */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOU_PY_P.sbn; sourceTree = "<group>"; };
+		5264006D2092091900F667AE /* POI_P.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = POI_P.prj; sourceTree = "<group>"; };
+		5264006E2092091900F667AE /* POI_P.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = POI_P.shx; sourceTree = "<group>"; };
 		5294AECB203EDD0F0050A4CE /* CompassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassButton.swift; sourceTree = "<group>"; };
 		5294AECF203EE4070050A4CE /* compass1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass1.png; sourceTree = "<group>"; };
 		52A1C4C1202C7A0000D65863 /* XCUIViewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCUIViewButton.h; sourceTree = "<group>"; };
@@ -74,6 +120,8 @@
 		3E15A1381AE84CEA00A7D40D = {
 			isa = PBXGroup;
 			children = (
+				5264002F2092059500F667AE /* SHP */,
+				5264002A2091FD1D00F667AE /* GeoDataBase */,
 				52A1C4CD202C842C00D65863 /* TiledFile */,
 				52FAFB54202BF14400869281 /* Layout */,
 				5271F5842029E338008CFDA5 /* XiaoChun */,
@@ -113,6 +161,44 @@
 				3E15A1451AE84CEA00A7D40D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5264002A2091FD1D00F667AE /* GeoDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				5264002C2091FD5500F667AE /* 莫干山.geodatabase */,
+				5264002B2091FD5500F667AE /* 莫干山电子地图.geodatabase */,
+			);
+			name = GeoDataBase;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		5264002F2092059500F667AE /* SHP */ = {
+			isa = PBXGroup;
+			children = (
+				5264006B2092091800F667AE /* BOU_PY_P.dbf */,
+				5264006A2092091800F667AE /* BOU_PY_P.prj */,
+				5264006C2092091800F667AE /* BOU_PY_P.sbn */,
+				5264005F2092091800F667AE /* BOU_PY_P.sbx */,
+				526400632092091800F667AE /* BOU_PY_P.shp */,
+				526400622092091800F667AE /* BOU_PY_P.shp.xml */,
+				526400612092091800F667AE /* BOU_PY_P.shx */,
+				526400682092091800F667AE /* POI_P.dbf */,
+				5264006D2092091900F667AE /* POI_P.prj */,
+				526400692092091800F667AE /* POI_P.sbn */,
+				5264005E2092091800F667AE /* POI_P.sbx */,
+				526400672092091800F667AE /* POI_P.shp */,
+				526400652092091800F667AE /* POI_P.shp.xml */,
+				5264006E2092091900F667AE /* POI_P.shx */,
+				5264005A2092091700F667AE /* TRA_NET_LN_P.dbf */,
+				526400602092091800F667AE /* TRA_NET_LN_P.prj */,
+				5264005B2092091700F667AE /* TRA_NET_LN_P.sbn */,
+				5264005C2092091700F667AE /* TRA_NET_LN_P.sbx */,
+				526400642092091800F667AE /* TRA_NET_LN_P.shp */,
+				5264005D2092091700F667AE /* TRA_NET_LN_P.shp.xml */,
+				526400662092091800F667AE /* TRA_NET_LN_P.shx */,
+			);
+			path = SHP;
 			sourceTree = "<group>";
 		};
 		5271F57F2029D886008CFDA5 /* Image */ = {
@@ -212,16 +298,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526400712092091900F667AE /* TRA_NET_LN_P.sbx in Resources */,
+				5264007F2092091900F667AE /* BOU_PY_P.prj in Resources */,
+				526400732092091900F667AE /* POI_P.sbx in Resources */,
+				526400702092091900F667AE /* TRA_NET_LN_P.sbn in Resources */,
 				3E15A14C1AE84CEA00A7D40D /* Main.storyboard in Resources */,
+				5264007B2092091900F667AE /* TRA_NET_LN_P.shx in Resources */,
+				526400762092091900F667AE /* BOU_PY_P.shx in Resources */,
+				5264006F2092091900F667AE /* TRA_NET_LN_P.dbf in Resources */,
 				3E15A1511AE84CEA00A7D40D /* LaunchScreen.xib in Resources */,
+				5264007A2092091900F667AE /* POI_P.shp.xml in Resources */,
+				526400772092091900F667AE /* BOU_PY_P.shp.xml in Resources */,
+				5264007D2092091900F667AE /* POI_P.dbf in Resources */,
+				5264007C2092091900F667AE /* POI_P.shp in Resources */,
+				526400832092091900F667AE /* POI_P.shx in Resources */,
 				52CEA42C202D62130070E7EB /* point.png in Resources */,
+				526400752092091900F667AE /* TRA_NET_LN_P.prj in Resources */,
 				3E15A16B1AE852F300A7D40D /* ArcGIS.bundle in Resources */,
+				5264002E2091FD5500F667AE /* 莫干山.geodatabase in Resources */,
 				52A1C4CE202C842C00D65863 /* TiledFile in Resources */,
+				526400742092091900F667AE /* BOU_PY_P.sbx in Resources */,
+				5264007E2092091900F667AE /* POI_P.sbn in Resources */,
 				52CEA42A202D60F40070E7EB /* WorldMap.png in Resources */,
+				5264002D2091FD5500F667AE /* 莫干山电子地图.geodatabase in Resources */,
+				526400822092091900F667AE /* POI_P.prj in Resources */,
+				526400782092091900F667AE /* BOU_PY_P.shp in Resources */,
 				52A1C4CA202C805100D65863 /* DeQing.png in Resources */,
 				52A1C4CC202C805100D65863 /* B_1.jpg in Resources */,
 				3E15A14E1AE84CEA00A7D40D /* Images.xcassets in Resources */,
+				526400812092091900F667AE /* BOU_PY_P.sbn in Resources */,
 				5294AED0203EE4070050A4CE /* compass1.png in Resources */,
+				526400722092091900F667AE /* TRA_NET_LN_P.shp.xml in Resources */,
+				526400792092091900F667AE /* TRA_NET_LN_P.shp in Resources */,
+				526400802092091900F667AE /* BOU_PY_P.dbf in Resources */,
 				52A1C4CB202C805100D65863 /* layer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 //    var segmentedController: XCUISegmentedControl!
     var map:AGSMap!
     var geodatabase:AGSGeodatabase!
+    var featureLayer:AGSFeatureLayer?
     
     let segmentedController = XCUISegmentedControl(items:["影像","矢量"])
     
@@ -120,28 +121,52 @@ class ViewController: UIViewController {
         segmentedController.addTarget(self, action: #selector(ViewController.segmentedController(segmentedControlSender:)), for: .valueChanged)
         self.mapView.addSubview(segmentedController)                       //将segment control添加到视图中去。
         
-////////初始化地图，设置显示范围（以行政中心往南为中点，2000米范围）///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////初始化地图，设置显示范围（以行政中心往南500米为中点，2000米范围）///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         self.map = AGSMap()
         let agsPoint = AGSPoint(x: 497365, y: 3380040, spatialReference: AGSSpatialReference(wkid: 4549))
         let envelopeWK = AGSEnvelope(center: agsPoint, width: 2000, height: 2000)
         self.map.initialViewpoint = AGSViewpoint(targetExtent: envelopeWK)
         
 ////////加载GDB数据
-//        self.geodatabase = AGSGeodatabase(name:"莫干山镇")
 //        self.geodatabase = AGSGeodatabase(name:"莫干山")
-//        let featureTable = AGSShapefileFeatureTable(name:"BOU_PY")
-//
-//        let featureLayer = AGSFeatureLayer(featureTable:featureTable)
+//        let featureTable = geodatabase.geodatabaseFeatureTable(withName: "BOU_PY")
+//        let featureLayer = AGSFeatureLayer(featureTable:featureTable!)
 //        self.map.operationalLayers.add(featureLayer)
+////////加载shapfile数据，目前仅加载德清县镇街道行政区划////////////////////////////////////////////////////////////////////////////////////////////////////
+        let polygonSHPFileTable = AGSShapefileFeatureTable(name: "BOU_PY_P")
+        let polygonSHPFileLayer = AGSFeatureLayer(featureTable: polygonSHPFileTable)
+        let outlineSymbol = AGSSimpleLineSymbol(style: .solid, color: .red, width: 1)
+        let fillSymbol = AGSSimpleFillSymbol(style: .solid, color: UIColor.yellow.withAlphaComponent(0.25), outline: outlineSymbol)
+        polygonSHPFileLayer.renderer = AGSSimpleRenderer(symbol: fillSymbol)
+
+        let linSHPFileTable = AGSShapefileFeatureTable(name:"TRA_NET_LN_P")
+        let lineSHPFileLayer = AGSFeatureLayer(featureTable: linSHPFileTable)
+        let lineSymbol = AGSSimpleLineSymbol(style: .dashDot, color: UIColor.blue, width: 2.0)
+        lineSHPFileLayer.renderer = AGSSimpleRenderer(symbol: lineSymbol)
+        
+//        let pointSHPFileTable = AGSShapefileFeatureTable(name:"POI_P")
+//        let pointSHPFileLayer = AGSFeatureLayer(featureTable:pointSHPFileTable)
+//        let pointSymbol = AGSSimpleMarkerSymbol(style: .X, color: UIColor.red, size: 3.0)
+//        pointSHPFileLayer.renderer = AGSSimpleRenderer(symbol:pointSymbol)
         
 ////////获取segmented control默认加载项，并根据默认项价值地图//////////////////////////////////////////////////////////////////////////////////////////////
         let defaultSelectedSegmentIndex = segmentedController.selectedSegmentIndex
         if (defaultSelectedSegmentIndex == 0) {
             self.map.operationalLayers.add(tiledLayerImage)
+            self.map.operationalLayers.add(polygonSHPFileLayer)
+            self.map.operationalLayers.add(lineSHPFileLayer)
+//            self.map.operationalLayers.add(pointSymbol)
         }else{
             self.map.operationalLayers.add(tiledLayerVector)
         }
         self.mapView.map = self.map
+        
+        zoom(mapView: mapView, to: polygonSHPFileLayer)
+        
+        featureLayer = polygonSHPFileLayer
+        
+        
+        
 }
 
     override func didReceiveMemoryWarning() {
@@ -198,5 +223,21 @@ class ViewController: UIViewController {
             centerPointLabel.frame = CGRect(x: XCScreenHeight/2 + 100, y: XCScreenWidth - 80, width: 300, height: 44)
         }
     }
+    
+    func zoom(mapView:AGSMapView, to featureLayer:AGSFeatureLayer) {
+        // Ensure the feature layer's metadata is loaded.
+        featureLayer.load { error in
+            guard error == nil else {
+                print("Couldn't load the shapefile \(error!.localizedDescription)")
+                return
+            }
+            
+            // Once the layer's metadata has loaded, we can read its full extent.
+//            if let initialExtent = featureLayer.fullExtent {
+//                mapView.setViewpointGeometry(initialExtent)
+//            }
+        }
+    }
+
 }
 

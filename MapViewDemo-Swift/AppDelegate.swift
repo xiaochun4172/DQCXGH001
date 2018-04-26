@@ -23,13 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 ////////添加license Key，获取APP许可，去除水印///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        do {
-            let result = try AGSArcGISRuntimeEnvironment.setLicenseKey("runtimelite,1000,rud1360954002,none,YYPJD4SZ8LB71R1DF180")
-            print("License Result : \(result.licenseStatus)")
-        }
-        catch let error as NSError {
-            print("error: \(error)")
-        }
+//        do {
+//            let result = try AGSArcGISRuntimeEnvironment.setLicenseKey("runtimelite,1000,rud1360954002,none,YYPJD4SZ8LB71R1DF180")
+//            print("License Result : \(result.licenseStatus)")
+//        }
+//        catch let error as NSError {
+//            print("error: \(error)")
+//        }
         return true
     }
 
