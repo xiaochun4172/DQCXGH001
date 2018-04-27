@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     let segmentedController = XCUISegmentedControl(items:["影像","矢量"])
     
+    let xcuiviewButton0 = XCUIViewButton()
     let xcuiviewButton1 = XCUIViewButton()
     let xcuiviewButton2 = XCUIViewButton()
     let xcuiviewButton3 = XCUIViewButton()
@@ -33,6 +34,8 @@ class ViewController: UIViewController {
 
     let tiledLayerImage = AGSArcGISTiledLayer(name:"影像地图TPK")
     let tiledLayerVector = AGSArcGISTiledLayer(name:"电子地图TPK")
+////下面是加载在线服务，服务地址里面不能有中文字符（要不然提示没有服务）////////////////////////////////////////////////////////////////////////////////
+//    let tiledLayerImage = AGSArcGISTiledLayer(url: URL(string: "http://220.191.216.230:6080/arcgis/rest/services/dghy_dzdt/MapServer")!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,8 +72,16 @@ class ViewController: UIViewController {
         self.mapView.addSubview(compassButton)
         
 ////////添加控件,多规////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        let xcuiviewButtonImage1 = UIImage.init(named: "layer.png")
-        let xcuiviewButtonTitle1 = "多规"
+        let xcuiviewButtonImage0 = UIImage.init(named: "layer.png")
+        let xcuiviewButtonTitle0 = "多规"
+        xcuiviewButton0.addTarget(self, action: #selector(xcuiviewButton0Action), for:.touchUpInside)
+        xcuiviewButton0.setImage(xcuiviewButtonImage0, for: UIControlState.normal)
+        xcuiviewButton0.setTitle(xcuiviewButtonTitle0, for: UIControlState.normal)
+        self.mapView.addSubview(xcuiviewButton0)
+        
+////////添加控件,SHP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        let xcuiviewButtonImage1 = UIImage.init(named: "shp.jpg")
+        let xcuiviewButtonTitle1 = "SHP"
         xcuiviewButton1.setImage(xcuiviewButtonImage1, for: UIControlState.normal)
         xcuiviewButton1.setTitle(xcuiviewButtonTitle1, for: UIControlState.normal)
         self.mapView.addSubview(xcuiviewButton1)
@@ -78,6 +89,7 @@ class ViewController: UIViewController {
 ////////添加控件,天地图////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         let xcuiviewButtonImage2 = UIImage.init(named: "WorldMap.png")
         let xcuiviewButtonTitle2 = "天地图"
+        xcuiviewButton2.addTarget(self, action: #selector(xcuiviewButton2Action), for:.touchUpInside)
         xcuiviewButton2.setImage(xcuiviewButtonImage2, for: UIControlState.normal)
         xcuiviewButton2.setTitle(xcuiviewButtonTitle2, for: UIControlState.normal)
         self.mapView.addSubview(xcuiviewButton2)
@@ -90,7 +102,7 @@ class ViewController: UIViewController {
         self.mapView.addSubview(xcuiviewButton3)
         
 ////////添加控件,规划图集////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        let xcuiviewButtonImage4 = UIImage.init(named: "point.png")
+        let xcuiviewButtonImage4 = UIImage.init(named: "planning.png")
         let xcuiviewButtonTitle4 = "规划"
         xcuiviewButton4.setImage(xcuiviewButtonImage4, for: UIControlState.normal)
         xcuiviewButton4.setTitle(xcuiviewButtonTitle4, for: UIControlState.normal)
@@ -194,12 +206,29 @@ class ViewController: UIViewController {
         print("self.map.rotation %d", mapView.rotation)
         print("click the compassButton")
     }
+    func xcuiviewButton0Action() {
+        let menu = XCmenuTableViewController()
+        let vc = UINavigationController(rootViewController: menu)
+        let popover = UIPopoverController(contentViewController: vc)
+        let cgrect = CGRect(x: 0, y: 30, width: 0, height: 0)
+        popover.present(from: cgrect, in: xcuiviewButton0, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
+        
+    }
+    
+    func xcuiviewButton2Action() {
+        let tdtDQ = AGSArcGISTiledLayer(url: URL(string:"http://220.191.216.230:6080/arcgis/rest/services/dghy_dzdt/MapServer")!)
+        self.map.operationalLayers.add(tdtDQ)
+    }
+    
+    
+    
     func receivedRotation(){
 //        let deviceOrientationIsPortrait = UIInterfaceOrientationIsPortrait()
         let deviceOrientationIsPortrait = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
         let XCScreenHeight = 1024
         let XCScreenWidth = 768
         if (deviceOrientationIsPortrait) {
+            xcuiviewButton0.frame = CGRect(x: XCScreenWidth-60, y: XCScreenHeight - 120 - 4*80, width: 40, height: 60)
             xcuiviewButton1.frame = CGRect(x: XCScreenWidth-60, y: XCScreenHeight - 120 - 3*80, width: 40, height: 60)
             xcuiviewButton2.frame = CGRect(x: XCScreenWidth-60, y: XCScreenHeight - 120 - 2*80, width: 40, height: 60)
             xcuiviewButton3.frame = CGRect(x: XCScreenWidth-60, y: XCScreenHeight - 120 - 80, width: 40, height: 60)
@@ -209,6 +238,8 @@ class ViewController: UIViewController {
             developerLabel.frame = CGRect(x: XCScreenWidth/2 - 150, y: XCScreenHeight - 80, width: 300, height: 44)
             centerPointLabel.frame = CGRect(x: XCScreenWidth/2 + 100, y: XCScreenHeight - 80, width: 300, height: 44)
         }else{
+            xcuiviewButton0.frame = CGRect(x: XCScreenHeight-60, y: XCScreenWidth - 100 - 4*60, width: 40, height: 40)
+            xcuiviewButton0.titleLabel?.isHidden = true
             xcuiviewButton1.frame = CGRect(x: XCScreenHeight-60, y: XCScreenWidth - 100 - 3*60, width: 40, height: 40)
             xcuiviewButton1.titleLabel?.isHidden = true
             xcuiviewButton2.frame = CGRect(x: XCScreenHeight-60, y: XCScreenWidth - 100 - 2*60, width: 40, height: 40)
