@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     let xcuiviewButton2 = XCUIViewButton()
     let xcuiviewButton3 = XCUIViewButton()
     let xcuiviewButton4 = XCUIViewButton()
+    var atlasPopover:UIPopoverController!
     let compassButton = CompassButton()
     let developerLabel = XCUILabel()
     let centerPointLabel = XCUILabel()
@@ -222,21 +223,16 @@ class ViewController: UIViewController {
     }
     func xcuiviewButton4Action() {
         print("点击了规划图集按钮。")
-        let viewController = UIViewController()
+        let viewController = AtlasViewController()
         viewController.title = String("规划图集")
         let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         rightBarButton.setImage(UIImage.init(named: "shutdown.png"), for: .normal)
-        rightBarButton.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 5)
+        rightBarButton.imageEdgeInsets = UIEdgeInsetsMake(2, 20, 2, 20)
         rightBarButton.addTarget(self, action: #selector(xcuiviewButton1Action), for: .touchUpInside)
         viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
         let atlasView = UINavigationController(rootViewController:viewController)
         let atlasPopover = UIPopoverController(contentViewController:atlasView)
-        let deviceOrientationIsPortrait = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
-        if (deviceOrientationIsPortrait) {
-            atlasPopover.contentSize = CGSize(width: 700, height: 900)
-        }else{
-            atlasPopover.contentSize = CGSize(width: 900, height: 700)
-        }
+        atlasPopover.contentSize = CGSize(width:UIScreen.main.bounds.width - 100,height:UIScreen.main.bounds.height - 100)
         let cgrect = CGRect(x: 0, y: 0, width: 0, height: 0)
         atlasPopover.present(from: cgrect, in: xcuiviewButton4, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
         
