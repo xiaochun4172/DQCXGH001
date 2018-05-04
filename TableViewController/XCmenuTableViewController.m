@@ -17,19 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-        NSURL* url1 = [NSURL URLWithString: @"http://220.191.216.230:6080/arcgis/rest/services/dghy_dzdt/MapServer"];
-        AGSArcGISTiledLayer *layer1 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url1];
-    
-        NSURL* url2 = [NSURL URLWithString: @"http://services.arcgisonline.com/arcgis/rest/services/World_Terrain_Base/MapServer"];
-        AGSArcGISTiledLayer *layer2 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url2];
+    NSURL* url1 = [NSURL URLWithString: @"http://220.191.216.230:6080/arcgis/rest/services/dghy_dzdt/MapServer"];
+    AGSArcGISTiledLayer *layer1 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url1];
+    NSURL* url2 = [NSURL URLWithString: @"http://services.arcgisonline.com/arcgis/rest/services/World_Terrain_Base/MapServer"];
+    AGSArcGISTiledLayer *layer2 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url2];
+    NSURL* url3 = [NSURL URLWithString: @"http://services.arcgisonline.com/arcgis/rest/services/ESRI_Imagery_World_2D/MapServer"];
+    AGSArcGISTiledLayer *layer3 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url3];
+    NSURL* url4 = [NSURL URLWithString: @"http://services.arcgisonline.com/arcgis/rest/services/ESRI_StreetMap_World_2D/MapServer"];
+    AGSArcGISTiledLayer *layer4 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url4];
 
-        NSURL* url3 = [NSURL URLWithString: @"http://services.arcgisonline.com/arcgis/rest/services/ESRI_Imagery_World_2D/MapServer"];
-        AGSArcGISTiledLayer *layer3 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url3];
-
-        NSURL* url4 = [NSURL URLWithString: @"http://services.arcgisonline.com/arcgis/rest/services/ESRI_StreetMap_World_2D/MapServer"];
-        AGSArcGISTiledLayer *layer4 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url4];
-
-//
     self.urlTable = @[layer1,layer2,layer3,layer4];
     self.menuTable = @[@"多规合一",@"建设用地总体规划",@"土地利用总体规划",@"项目审查"];
     self.title = @"加载图层";

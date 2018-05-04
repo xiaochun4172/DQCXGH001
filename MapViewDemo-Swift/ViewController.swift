@@ -32,8 +32,8 @@ class ViewController: UIViewController {
     let developerLabel = XCUILabel()
     let centerPointLabel = XCUILabel()
 
-    let tiledLayerImage = AGSArcGISTiledLayer(name:"影像地图TPK")
-    let tiledLayerVector = AGSArcGISTiledLayer(name:"电子地图TPK")
+    let tiledLayerImage = AGSArcGISTiledLayer(name:"影像地图1")
+    let tiledLayerVector = AGSArcGISTiledLayer(name:"电子地图1")
 ////下面是加载在线服务，服务地址里面不能有中文字符（要不然提示没有服务）////////////////////////////////////////////////////////////////////////////////
 //    let tiledLayerImage = AGSArcGISTiledLayer(url: URL(string: "http://220.191.216.230:6080/arcgis/rest/services/dghy_dzdt/MapServer")!)
     
@@ -82,6 +82,7 @@ class ViewController: UIViewController {
 ////////添加控件,SHP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         let xcuiviewButtonImage1 = UIImage.init(named: "shp.jpg")
         let xcuiviewButtonTitle1 = "SHP"
+        xcuiviewButton1.addTarget(self, action: #selector(xcuiviewButton1Action), for: .touchUpInside)
         xcuiviewButton1.setImage(xcuiviewButtonImage1, for: UIControlState.normal)
         xcuiviewButton1.setTitle(xcuiviewButtonTitle1, for: UIControlState.normal)
         self.mapView.addSubview(xcuiviewButton1)
@@ -97,6 +98,7 @@ class ViewController: UIViewController {
 ////////添加控件,定位////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         let xcuiviewButtonImage3 = UIImage.init(named: "point.png")
         let xcuiviewButtonTitle3 = "定位"
+        xcuiviewButton3.addTarget(self, action: #selector(xcuiviewButton3Action), for:.touchUpInside)
         xcuiviewButton3.setImage(xcuiviewButtonImage3, for: UIControlState.normal)
         xcuiviewButton3.setTitle(xcuiviewButtonTitle3, for: UIControlState.normal)
         self.mapView.addSubview(xcuiviewButton3)
@@ -104,6 +106,7 @@ class ViewController: UIViewController {
 ////////添加控件,规划图集////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         let xcuiviewButtonImage4 = UIImage.init(named: "planning.png")
         let xcuiviewButtonTitle4 = "规划"
+        xcuiviewButton4.addTarget(self, action: #selector(xcuiviewButton4Action), for:.touchUpInside)
         xcuiviewButton4.setImage(xcuiviewButtonImage4, for: UIControlState.normal)
         xcuiviewButton4.setTitle(xcuiviewButtonTitle4, for: UIControlState.normal)
         self.mapView.addSubview(xcuiviewButton4)
@@ -112,12 +115,7 @@ class ViewController: UIViewController {
         developerLabel.text = "Developer:XiaoChun，15906721241"
         developerLabel.adjustsFontSizeToFitWidth = true
         self.mapView.addSubview(developerLabel)
-        
-////////右下角添加标签，显示当前地图中心点坐标（未实现）/////////////////////////////////////////////////////////////////////////////////////////////////
-        centerPointLabel.text = String(format:"x: %.2f, y: %.2f", self.mapView.center.x,self.mapView.center.y)
-        centerPointLabel.adjustsFontSizeToFitWidth = true
-        self.mapView.addSubview(centerPointLabel)
-        
+
 ////////添加segmented control，影像和矢量切换/////////////////////////////////////////////////////////////////////////////////////////////////////////
         segmentedController.selectedSegmentIndex = 0
         segmentedController.isMomentary = false
@@ -129,7 +127,6 @@ class ViewController: UIViewController {
         let segmengtedControlDic:NSDictionary = [NSForegroundColorAttributeName:UIColor.blue,NSFontAttributeName:UIFont.boldSystemFont(ofSize: 15)]
         segmentedController.setTitleTextAttributes(segmengtedControlDic as? [AnyHashable : Any], for: UIControlState.normal)
 ////////添加segmente control值，改变监听，设置改变selectedSegmentIndex的值来添加不同的地图
-        
         segmentedController.addTarget(self, action: #selector(ViewController.segmentedController(segmentedControlSender:)), for: .valueChanged)
         self.mapView.addSubview(segmentedController)                       //将segment control添加到视图中去。
         
@@ -139,12 +136,12 @@ class ViewController: UIViewController {
         let envelopeWK = AGSEnvelope(center: agsPoint, width: 2000, height: 2000)
         self.map.initialViewpoint = AGSViewpoint(targetExtent: envelopeWK)
         
-////////加载GDB数据
-//        self.geodatabase = AGSGeodatabase(name:"莫干山")
-//        let featureTable = geodatabase.geodatabaseFeatureTable(withName: "BOU_PY")
-//        let featureLayer = AGSFeatureLayer(featureTable:featureTable!)
-//        self.map.operationalLayers.add(featureLayer)
-////////加载shapfile数据，目前仅加载德清县镇街道行政区划////////////////////////////////////////////////////////////////////////////////////////////////////
+////////右下角添加标签，显示当前地图中心点坐标（未实现）/////////////////////////////////////////////////////////////////////////////////////////////////
+        centerPointLabel.text = String(format:"x: %.2f, y: %.2f", self.mapView.center.x,self.mapView.center.y)
+        centerPointLabel.adjustsFontSizeToFitWidth = true
+        self.mapView.addSubview(centerPointLabel)
+        
+////////加载shapfile数据，目前仅加载德清县镇街道行政区划,部分道路数据////////////////////////////////////////////////////////////////////////////////////////////////////
         let polygonSHPFileTable = AGSShapefileFeatureTable(name: "BOU_PY_P")
         let polygonSHPFileLayer = AGSFeatureLayer(featureTable: polygonSHPFileTable)
         let outlineSymbol = AGSSimpleLineSymbol(style: .solid, color: .red, width: 1)
@@ -174,11 +171,7 @@ class ViewController: UIViewController {
         self.mapView.map = self.map
         
         zoom(mapView: mapView, to: polygonSHPFileLayer)
-        
         featureLayer = polygonSHPFileLayer
-        
-        
-        
 }
 
     override func didReceiveMemoryWarning() {
@@ -207,6 +200,7 @@ class ViewController: UIViewController {
         print("click the compassButton")
     }
     func xcuiviewButton0Action() {
+        print("点击了多规按钮，将加载多规合一相关图层。")
         let menu = XCmenuTableViewController()
         let vc = UINavigationController(rootViewController: menu)
         let popover = UIPopoverController(contentViewController: vc)
@@ -214,14 +208,39 @@ class ViewController: UIViewController {
         popover.present(from: cgrect, in: xcuiviewButton0, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
         
     }
+    func xcuiviewButton1Action() {
+        print("点击了SHP按钮，将加载shape file数据。")
+    }
     
     func xcuiviewButton2Action() {
         let tdtDQ = AGSArcGISTiledLayer(url: URL(string:"http://220.191.216.230:6080/arcgis/rest/services/dghy_dzdt/MapServer")!)
         self.map.operationalLayers.add(tdtDQ)
     }
     
-    
-    
+    func xcuiviewButton3Action() {
+        print("点击了定位按钮，将定位到当前位置。")
+    }
+    func xcuiviewButton4Action() {
+        print("点击了规划图集按钮。")
+        let viewController = UIViewController()
+        viewController.title = String("规划图集")
+        let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        rightBarButton.setImage(UIImage.init(named: "shutdown.png"), for: .normal)
+        rightBarButton.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 5)
+        rightBarButton.addTarget(self, action: #selector(xcuiviewButton1Action), for: .touchUpInside)
+        viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
+        let atlasView = UINavigationController(rootViewController:viewController)
+        let atlasPopover = UIPopoverController(contentViewController:atlasView)
+        let deviceOrientationIsPortrait = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
+        if (deviceOrientationIsPortrait) {
+            atlasPopover.contentSize = CGSize(width: 700, height: 900)
+        }else{
+            atlasPopover.contentSize = CGSize(width: 900, height: 700)
+        }
+        let cgrect = CGRect(x: 0, y: 0, width: 0, height: 0)
+        atlasPopover.present(from: cgrect, in: xcuiviewButton4, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
+        
+    }
     func receivedRotation(){
 //        let deviceOrientationIsPortrait = UIInterfaceOrientationIsPortrait()
         let deviceOrientationIsPortrait = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)

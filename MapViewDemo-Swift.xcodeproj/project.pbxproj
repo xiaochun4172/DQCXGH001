@@ -15,6 +15,8 @@
 		3E15A1671AE84DFC00A7D40D /* ArcGIS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E15A1661AE84DFC00A7D40D /* ArcGIS.framework */; };
 		3E15A1691AE84FC400A7D40D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E15A1681AE84FC400A7D40D /* libc++.dylib */; };
 		3E15A16B1AE852F300A7D40D /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3E15A16A1AE852F300A7D40D /* ArcGIS.bundle */; };
+		5216DEEB209C0AD000F4C8B3 /* 影像地图1.tpk in Resources */ = {isa = PBXBuildFile; fileRef = 5216DEE9209C0AD000F4C8B3 /* 影像地图1.tpk */; };
+		5216DEEC209C0AD000F4C8B3 /* 电子地图1.tpk in Resources */ = {isa = PBXBuildFile; fileRef = 5216DEEA209C0AD000F4C8B3 /* 电子地图1.tpk */; };
 		5238C936202D81A60084CAEB /* XCUISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5238C935202D81A60084CAEB /* XCUISegmentedControl.swift */; };
 		5264006F2092091900F667AE /* TRA_NET_LN_P.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 5264005A2092091700F667AE /* TRA_NET_LN_P.dbf */; };
 		526400702092091900F667AE /* TRA_NET_LN_P.sbn in Resources */ = {isa = PBXBuildFile; fileRef = 5264005B2092091700F667AE /* TRA_NET_LN_P.sbn */; };
@@ -44,13 +46,14 @@
 		52A1C4CA202C805100D65863 /* DeQing.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A1C4C7202C805000D65863 /* DeQing.png */; };
 		52A1C4CB202C805100D65863 /* layer.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A1C4C8202C805100D65863 /* layer.png */; };
 		52A1C4CC202C805100D65863 /* B_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52A1C4C9202C805100D65863 /* B_1.jpg */; };
-		52A1C4CE202C842C00D65863 /* TiledFile in Resources */ = {isa = PBXBuildFile; fileRef = 52A1C4CD202C842C00D65863 /* TiledFile */; };
 		52CDBADE2093405B00B7722F /* planning.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CDBADD2093405B00B7722F /* planning.png */; };
 		52CDBAE02093428A00B7722F /* shp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52CDBADF2093428900B7722F /* shp.jpg */; };
 		52CDBAE42093477D00B7722F /* XCmenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CDBAE22093477D00B7722F /* XCmenuTableViewController.m */; };
 		52CEA42A202D60F40070E7EB /* WorldMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CEA429202D60F40070E7EB /* WorldMap.png */; };
 		52CEA42C202D62130070E7EB /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CEA42B202D62130070E7EB /* point.png */; };
 		52FAFB58202BF16200869281 /* XCUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FAFB57202BF16200869281 /* XCUILabel.m */; };
+		52FDDDA7209C42F9001AC0E1 /* shutdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FDDDA6209C42F9001AC0E1 /* shutdown.png */; };
+		52FDDDA9209C433F001AC0E1 /* AtlasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FDDDA8209C433F001AC0E1 /* AtlasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,8 @@
 		3E15A1661AE84DFC00A7D40D /* ArcGIS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArcGIS.framework; path = $HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static/ArcGIS.framework; sourceTree = "<absolute>"; };
 		3E15A1681AE84FC400A7D40D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		3E15A16A1AE852F300A7D40D /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = $HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<absolute>"; };
+		5216DEE9209C0AD000F4C8B3 /* 影像地图1.tpk */ = {isa = PBXFileReference; lastKnownFileType = file; path = "影像地图1.tpk"; sourceTree = "<group>"; };
+		5216DEEA209C0AD000F4C8B3 /* 电子地图1.tpk */ = {isa = PBXFileReference; lastKnownFileType = file; path = "电子地图1.tpk"; sourceTree = "<group>"; };
 		5238C935202D81A60084CAEB /* XCUISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUISegmentedControl.swift; sourceTree = "<group>"; };
 		5264005A2092091700F667AE /* TRA_NET_LN_P.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRA_NET_LN_P.dbf; sourceTree = "<group>"; };
 		5264005B2092091700F667AE /* TRA_NET_LN_P.sbn */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRA_NET_LN_P.sbn; sourceTree = "<group>"; };
@@ -95,7 +100,6 @@
 		52A1C4C7202C805000D65863 /* DeQing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeQing.png; sourceTree = "<group>"; };
 		52A1C4C8202C805100D65863 /* layer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = layer.png; sourceTree = "<group>"; };
 		52A1C4C9202C805100D65863 /* B_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B_1.jpg; sourceTree = "<group>"; };
-		52A1C4CD202C842C00D65863 /* TiledFile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TiledFile; sourceTree = "<group>"; };
 		52CDBADD2093405B00B7722F /* planning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planning.png; sourceTree = "<group>"; };
 		52CDBADF2093428900B7722F /* shp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shp.jpg; sourceTree = "<group>"; };
 		52CDBAE22093477D00B7722F /* XCmenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCmenuTableViewController.m; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		52FAFB55202BF16100869281 /* MapViewDemo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MapViewDemo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		52FAFB56202BF16200869281 /* XCUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCUILabel.h; sourceTree = "<group>"; };
 		52FAFB57202BF16200869281 /* XCUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCUILabel.m; sourceTree = "<group>"; };
+		52FDDDA6209C42F9001AC0E1 /* shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shutdown.png; sourceTree = "<group>"; };
+		52FDDDA8209C433F001AC0E1 /* AtlasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,9 +129,9 @@
 		3E15A1381AE84CEA00A7D40D = {
 			isa = PBXGroup;
 			children = (
+				5216DEE8209C0A5800F4C8B3 /* TPK_File */,
 				52CDBAE12093476000B7722F /* TableViewController */,
 				5264002F2092059500F667AE /* SHP */,
-				52A1C4CD202C842C00D65863 /* TiledFile */,
 				52FAFB54202BF14400869281 /* Layout */,
 				5271F5842029E338008CFDA5 /* XiaoChun */,
 				5271F57F2029D886008CFDA5 /* Image */,
@@ -166,6 +172,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5216DEE8209C0A5800F4C8B3 /* TPK_File */ = {
+			isa = PBXGroup;
+			children = (
+				5216DEEA209C0AD000F4C8B3 /* 电子地图1.tpk */,
+				5216DEE9209C0AD000F4C8B3 /* 影像地图1.tpk */,
+			);
+			path = TPK_File;
+			sourceTree = "<group>";
+		};
 		5264002F2092059500F667AE /* SHP */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +212,7 @@
 		5271F57F2029D886008CFDA5 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				52FDDDA6209C42F9001AC0E1 /* shutdown.png */,
 				52CDBADF2093428900B7722F /* shp.jpg */,
 				52CDBADD2093405B00B7722F /* planning.png */,
 				5294AECF203EE4070050A4CE /* compass1.png */,
@@ -223,6 +239,7 @@
 			children = (
 				52CDBAE32093477D00B7722F /* XCmenuTableViewController.h */,
 				52CDBAE22093477D00B7722F /* XCmenuTableViewController.m */,
+				52FDDDA8209C433F001AC0E1 /* AtlasViewController.swift */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -314,19 +331,21 @@
 				52CDBAE02093428A00B7722F /* shp.jpg in Resources */,
 				5264007A2092091900F667AE /* POI_P.shp.xml in Resources */,
 				526400772092091900F667AE /* BOU_PY_P.shp.xml in Resources */,
+				5216DEEB209C0AD000F4C8B3 /* 影像地图1.tpk in Resources */,
 				5264007D2092091900F667AE /* POI_P.dbf in Resources */,
 				5264007C2092091900F667AE /* POI_P.shp in Resources */,
+				52FDDDA7209C42F9001AC0E1 /* shutdown.png in Resources */,
 				526400832092091900F667AE /* POI_P.shx in Resources */,
 				52CEA42C202D62130070E7EB /* point.png in Resources */,
 				526400752092091900F667AE /* TRA_NET_LN_P.prj in Resources */,
 				3E15A16B1AE852F300A7D40D /* ArcGIS.bundle in Resources */,
-				52A1C4CE202C842C00D65863 /* TiledFile in Resources */,
 				526400742092091900F667AE /* BOU_PY_P.sbx in Resources */,
 				5264007E2092091900F667AE /* POI_P.sbn in Resources */,
 				52CEA42A202D60F40070E7EB /* WorldMap.png in Resources */,
 				526400822092091900F667AE /* POI_P.prj in Resources */,
 				526400782092091900F667AE /* BOU_PY_P.shp in Resources */,
 				52A1C4CA202C805100D65863 /* DeQing.png in Resources */,
+				5216DEEC209C0AD000F4C8B3 /* 电子地图1.tpk in Resources */,
 				52A1C4CC202C805100D65863 /* B_1.jpg in Resources */,
 				3E15A14E1AE84CEA00A7D40D /* Images.xcassets in Resources */,
 				526400812092091900F667AE /* BOU_PY_P.sbn in Resources */,
@@ -349,6 +368,7 @@
 				52A1C4C6202C7E6700D65863 /* UIView+Extension.m in Sources */,
 				52A1C4C3202C7A0100D65863 /* XCUIViewButton.m in Sources */,
 				3E15A1491AE84CEA00A7D40D /* ViewController.swift in Sources */,
+				52FDDDA9209C433F001AC0E1 /* AtlasViewController.swift in Sources */,
 				52FAFB58202BF16200869281 /* XCUILabel.m in Sources */,
 				3E15A1471AE84CEA00A7D40D /* AppDelegate.swift in Sources */,
 				52CDBAE42093477D00B7722F /* XCmenuTableViewController.m in Sources */,
