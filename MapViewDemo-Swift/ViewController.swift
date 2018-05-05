@@ -221,21 +221,16 @@ class ViewController: UIViewController {
     func xcuiviewButton3Action() {
         print("点击了定位按钮，将定位到当前位置。")
     }
+    
     func xcuiviewButton4Action() {
         print("点击了规划图集按钮。")
         let viewController = AtlasViewController()
-        viewController.title = String("规划图集")
-        let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        rightBarButton.setImage(UIImage.init(named: "shutdown.png"), for: .normal)
-        rightBarButton.imageEdgeInsets = UIEdgeInsetsMake(2, 20, 2, 20)
-        rightBarButton.addTarget(self, action: #selector(xcuiviewButton1Action), for: .touchUpInside)
-        viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
         let atlasView = UINavigationController(rootViewController:viewController)
         let atlasPopover = UIPopoverController(contentViewController:atlasView)
         atlasPopover.contentSize = CGSize(width:UIScreen.main.bounds.width - 100,height:UIScreen.main.bounds.height - 100)
         let cgrect = CGRect(x: 0, y: 0, width: 0, height: 0)
         atlasPopover.present(from: cgrect, in: xcuiviewButton4, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
-        
+
     }
     func receivedRotation(){
 //        let deviceOrientationIsPortrait = UIInterfaceOrientationIsPortrait()

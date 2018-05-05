@@ -9,20 +9,21 @@
 import Foundation
 
 class AtlasViewController: UIViewController {
-//    override init(style: UITableViewStyle) {
-//        self.title = String("规划图集")
-//        let rightBarButtonImage = UIImage.init(named: "shutdown.png")
-//
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightBarButtonImage, style: UIBarButtonItemStyle.done, target: self, action: touchAction)
-//        let deviceOrientationIsPortrait = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
-//        if (deviceOrientationIsPortrait) {
-//            self.contentSize = CGSize(width: 600, height: 900)
-//        }else{
-//            self.contentSize = CGSize(width: 900, height: 600)
-//        }
-//    }
-//    func touchAction() {
-//
-//    }
+    override func viewDidLoad() {
+        super .viewDidLoad()
+        
+        self.title = String("规划图集2")
+        let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        rightBarButton.setImage(UIImage.init(named: "shutdown.png"), for: .normal)
+        rightBarButton.imageEdgeInsets = UIEdgeInsetsMake(2, 20, 2, 20)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
+        
+        rightBarButton.addTarget(self, action: #selector(shutDown), for: .touchUpInside)
+
+    }
+
+    func shutDown()  {
+        print("点击关闭按钮")
+    }
 }
 
