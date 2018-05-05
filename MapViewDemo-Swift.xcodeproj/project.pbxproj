@@ -15,6 +15,15 @@
 		3E15A1671AE84DFC00A7D40D /* ArcGIS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E15A1661AE84DFC00A7D40D /* ArcGIS.framework */; };
 		3E15A1691AE84FC400A7D40D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E15A1681AE84FC400A7D40D /* libc++.dylib */; };
 		3E15A16B1AE852F300A7D40D /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3E15A16A1AE852F300A7D40D /* ArcGIS.bundle */; };
+		5207F30A209D993200D008B6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207F309209D993200D008B6 /* ImageViewController.swift */; };
+		5207F30C209D9B4B00D008B6 /* picCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207F30B209D9B4B00D008B6 /* picCollectionViewCell.swift */; };
+		5207F315209D9E1100D008B6 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5207F30E209D9E1000D008B6 /* 1.jpg */; };
+		5207F316209D9E1100D008B6 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5207F30F209D9E1000D008B6 /* 2.jpg */; };
+		5207F317209D9E1100D008B6 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5207F310209D9E1000D008B6 /* 5.jpg */; };
+		5207F318209D9E1100D008B6 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5207F311209D9E1000D008B6 /* 7.jpg */; };
+		5207F319209D9E1100D008B6 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5207F312209D9E1000D008B6 /* 4.jpg */; };
+		5207F31A209D9E1100D008B6 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5207F313209D9E1000D008B6 /* 3.jpg */; };
+		5207F31B209D9E1100D008B6 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5207F314209D9E1100D008B6 /* 6.jpg */; };
 		5216DEEB209C0AD000F4C8B3 /* 影像地图1.tpk in Resources */ = {isa = PBXBuildFile; fileRef = 5216DEE9209C0AD000F4C8B3 /* 影像地图1.tpk */; };
 		5216DEEC209C0AD000F4C8B3 /* 电子地图1.tpk in Resources */ = {isa = PBXBuildFile; fileRef = 5216DEEA209C0AD000F4C8B3 /* 电子地图1.tpk */; };
 		5238C936202D81A60084CAEB /* XCUISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5238C935202D81A60084CAEB /* XCUISegmentedControl.swift */; };
@@ -67,6 +76,15 @@
 		3E15A1661AE84DFC00A7D40D /* ArcGIS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArcGIS.framework; path = $HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static/ArcGIS.framework; sourceTree = "<absolute>"; };
 		3E15A1681AE84FC400A7D40D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		3E15A16A1AE852F300A7D40D /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = $HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<absolute>"; };
+		5207F309209D993200D008B6 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		5207F30B209D9B4B00D008B6 /* picCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picCollectionViewCell.swift; sourceTree = "<group>"; };
+		5207F30E209D9E1000D008B6 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		5207F30F209D9E1000D008B6 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		5207F310209D9E1000D008B6 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		5207F311209D9E1000D008B6 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		5207F312209D9E1000D008B6 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		5207F313209D9E1000D008B6 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		5207F314209D9E1100D008B6 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
 		5216DEE9209C0AD000F4C8B3 /* 影像地图1.tpk */ = {isa = PBXFileReference; lastKnownFileType = file; path = "影像地图1.tpk"; sourceTree = "<group>"; };
 		5216DEEA209C0AD000F4C8B3 /* 电子地图1.tpk */ = {isa = PBXFileReference; lastKnownFileType = file; path = "电子地图1.tpk"; sourceTree = "<group>"; };
 		5238C935202D81A60084CAEB /* XCUISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUISegmentedControl.swift; sourceTree = "<group>"; };
@@ -129,12 +147,13 @@
 		3E15A1381AE84CEA00A7D40D = {
 			isa = PBXGroup;
 			children = (
+				5207F30D209D9CC400D008B6 /* Image */,
 				5216DEE8209C0A5800F4C8B3 /* TPK_File */,
 				52CDBAE12093476000B7722F /* TableViewController */,
 				5264002F2092059500F667AE /* SHP */,
 				52FAFB54202BF14400869281 /* Layout */,
 				5271F5842029E338008CFDA5 /* XiaoChun */,
-				5271F57F2029D886008CFDA5 /* Image */,
+				5271F57F2029D886008CFDA5 /* Icon */,
 				3E15A1431AE84CEA00A7D40D /* MapViewDemo-Swift */,
 				3E15A1421AE84CEA00A7D40D /* Products */,
 			);
@@ -170,6 +189,20 @@
 				3E15A1451AE84CEA00A7D40D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5207F30D209D9CC400D008B6 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				5207F30E209D9E1000D008B6 /* 1.jpg */,
+				5207F30F209D9E1000D008B6 /* 2.jpg */,
+				5207F313209D9E1000D008B6 /* 3.jpg */,
+				5207F312209D9E1000D008B6 /* 4.jpg */,
+				5207F310209D9E1000D008B6 /* 5.jpg */,
+				5207F314209D9E1100D008B6 /* 6.jpg */,
+				5207F311209D9E1000D008B6 /* 7.jpg */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		5216DEE8209C0A5800F4C8B3 /* TPK_File */ = {
@@ -209,7 +242,7 @@
 			path = SHP;
 			sourceTree = "<group>";
 		};
-		5271F57F2029D886008CFDA5 /* Image */ = {
+		5271F57F2029D886008CFDA5 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
 				52FDDDA6209C42F9001AC0E1 /* shutdown.png */,
@@ -222,7 +255,7 @@
 				52A1C4C7202C805000D65863 /* DeQing.png */,
 				52A1C4C8202C805100D65863 /* layer.png */,
 			);
-			path = Image;
+			path = Icon;
 			sourceTree = "<group>";
 		};
 		5271F5842029E338008CFDA5 /* XiaoChun */ = {
@@ -240,6 +273,8 @@
 				52CDBAE32093477D00B7722F /* XCmenuTableViewController.h */,
 				52CDBAE22093477D00B7722F /* XCmenuTableViewController.m */,
 				52FDDDA8209C433F001AC0E1 /* AtlasViewController.swift */,
+				5207F309209D993200D008B6 /* ImageViewController.swift */,
+				5207F30B209D9B4B00D008B6 /* picCollectionViewCell.swift */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -319,11 +354,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5207F315209D9E1100D008B6 /* 1.jpg in Resources */,
 				526400712092091900F667AE /* TRA_NET_LN_P.sbx in Resources */,
 				5264007F2092091900F667AE /* BOU_PY_P.prj in Resources */,
 				526400732092091900F667AE /* POI_P.sbx in Resources */,
 				526400702092091900F667AE /* TRA_NET_LN_P.sbn in Resources */,
 				3E15A14C1AE84CEA00A7D40D /* Main.storyboard in Resources */,
+				5207F31B209D9E1100D008B6 /* 6.jpg in Resources */,
 				5264007B2092091900F667AE /* TRA_NET_LN_P.shx in Resources */,
 				526400762092091900F667AE /* BOU_PY_P.shx in Resources */,
 				5264006F2092091900F667AE /* TRA_NET_LN_P.dbf in Resources */,
@@ -345,13 +382,18 @@
 				526400822092091900F667AE /* POI_P.prj in Resources */,
 				526400782092091900F667AE /* BOU_PY_P.shp in Resources */,
 				52A1C4CA202C805100D65863 /* DeQing.png in Resources */,
+				5207F318209D9E1100D008B6 /* 7.jpg in Resources */,
 				5216DEEC209C0AD000F4C8B3 /* 电子地图1.tpk in Resources */,
+				5207F316209D9E1100D008B6 /* 2.jpg in Resources */,
 				52A1C4CC202C805100D65863 /* B_1.jpg in Resources */,
 				3E15A14E1AE84CEA00A7D40D /* Images.xcassets in Resources */,
 				526400812092091900F667AE /* BOU_PY_P.sbn in Resources */,
+				5207F31A209D9E1100D008B6 /* 3.jpg in Resources */,
 				5294AED0203EE4070050A4CE /* compass1.png in Resources */,
+				5207F317209D9E1100D008B6 /* 5.jpg in Resources */,
 				526400722092091900F667AE /* TRA_NET_LN_P.shp.xml in Resources */,
 				526400792092091900F667AE /* TRA_NET_LN_P.shp in Resources */,
+				5207F319209D9E1100D008B6 /* 4.jpg in Resources */,
 				526400802092091900F667AE /* BOU_PY_P.dbf in Resources */,
 				52A1C4CB202C805100D65863 /* layer.png in Resources */,
 				52CDBADE2093405B00B7722F /* planning.png in Resources */,
@@ -365,8 +407,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5207F30C209D9B4B00D008B6 /* picCollectionViewCell.swift in Sources */,
 				52A1C4C6202C7E6700D65863 /* UIView+Extension.m in Sources */,
 				52A1C4C3202C7A0100D65863 /* XCUIViewButton.m in Sources */,
+				5207F30A209D993200D008B6 /* ImageViewController.swift in Sources */,
 				3E15A1491AE84CEA00A7D40D /* ViewController.swift in Sources */,
 				52FDDDA9209C433F001AC0E1 /* AtlasViewController.swift in Sources */,
 				52FAFB58202BF16200869281 /* XCUILabel.m in Sources */,

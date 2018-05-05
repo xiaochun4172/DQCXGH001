@@ -15,10 +15,11 @@ import UIKit
 import ArcGIS
 
 class ViewController: UIViewController {
+    
+    
     @IBOutlet var mapView: AGSMapView!
 //    var segmentedController: XCUISegmentedControl!
     var map:AGSMap!
-    var geodatabase:AGSGeodatabase!
     var featureLayer:AGSFeatureLayer?
     
     let segmentedController = XCUISegmentedControl(items:["影像","矢量"])
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
     let xcuiviewButton3 = XCUIViewButton()
     let xcuiviewButton4 = XCUIViewButton()
     var atlasPopover:UIPopoverController!
+
     let compassButton = CompassButton()
     let developerLabel = XCUILabel()
     let centerPointLabel = XCUILabel()
@@ -209,6 +211,7 @@ class ViewController: UIViewController {
         popover.present(from: cgrect, in: xcuiviewButton0, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
         
     }
+
     func xcuiviewButton1Action() {
         print("点击了SHP按钮，将加载shape file数据。")
     }
@@ -226,12 +229,16 @@ class ViewController: UIViewController {
         print("点击了规划图集按钮。")
         let viewController = AtlasViewController()
         let atlasView = UINavigationController(rootViewController:viewController)
-        let atlasPopover = UIPopoverController(contentViewController:atlasView)
-        atlasPopover.contentSize = CGSize(width:UIScreen.main.bounds.width - 100,height:UIScreen.main.bounds.height - 100)
+        let atlasPopover = UIPopoverController(contentViewController: atlasView)
+        atlasPopover.contentSize = CGSize(width:768 - 50, height:768 - 50)
         let cgrect = CGRect(x: 0, y: 0, width: 0, height: 0)
         atlasPopover.present(from: cgrect, in: xcuiviewButton4, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
-
+        
+        let width = atlasPopover.contentSize.width
+        let height = atlasPopover.contentSize.height
+        print("width,height",width,height)
     }
+  
     func receivedRotation(){
 //        let deviceOrientationIsPortrait = UIInterfaceOrientationIsPortrait()
         let deviceOrientationIsPortrait = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
