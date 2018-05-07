@@ -14,7 +14,7 @@
 import UIKit
 import ArcGIS
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,XCmenuTableViewControllerDelegate {
     
     
     @IBOutlet var mapView: AGSMapView!
@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     let xcuiviewButton3 = XCUIViewButton()
     let xcuiviewButton4 = XCUIViewButton()
     var atlasPopover:UIPopoverController!
+    var popover:UIPopoverController!
 
     let compassButton = CompassButton()
     let developerLabel = XCUILabel()
@@ -77,6 +78,8 @@ class ViewController: UIViewController {
 ////////添加控件,多规////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         let xcuiviewButtonImage0 = UIImage.init(named: "layer.png")
         let xcuiviewButtonTitle0 = "多规"
+//        segmentedController.addTarget(self, action: #selector(ViewController.segmentedController(segmentedControlSender:)), for: .valueChanged)
+
         xcuiviewButton0.addTarget(self, action: #selector(xcuiviewButton0Action), for:.touchUpInside)
         xcuiviewButton0.setImage(xcuiviewButtonImage0, for: UIControlState.normal)
         xcuiviewButton0.setTitle(xcuiviewButtonTitle0, for: UIControlState.normal)
@@ -84,7 +87,7 @@ class ViewController: UIViewController {
         
 ////////添加控件,SHP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         let xcuiviewButtonImage1 = UIImage.init(named: "shp.jpg")
-        let xcuiviewButtonTitle1 = "SHP"
+        let xcuiviewButtonTitle1 = "全景"
         xcuiviewButton1.addTarget(self, action: #selector(xcuiviewButton1Action), for: .touchUpInside)
         xcuiviewButton1.setImage(xcuiviewButtonImage1, for: UIControlState.normal)
         xcuiviewButton1.setTitle(xcuiviewButtonTitle1, for: UIControlState.normal)
@@ -92,7 +95,7 @@ class ViewController: UIViewController {
         
 ////////添加控件,天地图////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         let xcuiviewButtonImage2 = UIImage.init(named: "WorldMap.png")
-        let xcuiviewButtonTitle2 = "天地图"
+        let xcuiviewButtonTitle2 = "一周一图"
         xcuiviewButton2.addTarget(self, action: #selector(xcuiviewButton2Action), for:.touchUpInside)
         xcuiviewButton2.setImage(xcuiviewButtonImage2, for: UIControlState.normal)
         xcuiviewButton2.setTitle(xcuiviewButtonTitle2, for: UIControlState.normal)
@@ -145,16 +148,16 @@ class ViewController: UIViewController {
         self.mapView.addSubview(centerPointLabel)
         
 ////////加载shapfile数据，目前仅加载德清县镇街道行政区划,部分道路数据////////////////////////////////////////////////////////////////////////////////////////////////////
-        let polygonSHPFileTable = AGSShapefileFeatureTable(name: "BOU_PY_P")
-        let polygonSHPFileLayer = AGSFeatureLayer(featureTable: polygonSHPFileTable)
-        let outlineSymbol = AGSSimpleLineSymbol(style: .solid, color: .red, width: 1)
-        let fillSymbol = AGSSimpleFillSymbol(style: .solid, color: UIColor.yellow.withAlphaComponent(0.25), outline: outlineSymbol)
-        polygonSHPFileLayer.renderer = AGSSimpleRenderer(symbol: fillSymbol)
-
-        let linSHPFileTable = AGSShapefileFeatureTable(name:"TRA_NET_LN_P")
-        let lineSHPFileLayer = AGSFeatureLayer(featureTable: linSHPFileTable)
-        let lineSymbol = AGSSimpleLineSymbol(style: .dashDot, color: UIColor.blue, width: 2.0)
-        lineSHPFileLayer.renderer = AGSSimpleRenderer(symbol: lineSymbol)
+//        let polygonSHPFileTable = AGSShapefileFeatureTable(name: "BOU_PY_P")
+//        let polygonSHPFileLayer = AGSFeatureLayer(featureTable: polygonSHPFileTable)
+//        let outlineSymbol = AGSSimpleLineSymbol(style: .solid, color: .red, width: 1)
+//        let fillSymbol = AGSSimpleFillSymbol(style: .solid, color: UIColor.yellow.withAlphaComponent(0.25), outline: outlineSymbol)
+//        polygonSHPFileLayer.renderer = AGSSimpleRenderer(symbol: fillSymbol)
+//
+//        let linSHPFileTable = AGSShapefileFeatureTable(name:"TRA_NET_LN_P")
+//        let lineSHPFileLayer = AGSFeatureLayer(featureTable: linSHPFileTable)
+//        let lineSymbol = AGSSimpleLineSymbol(style: .dashDot, color: UIColor.blue, width: 2.0)
+//        lineSHPFileLayer.renderer = AGSSimpleRenderer(symbol: lineSymbol)
         
 //        let pointSHPFileTable = AGSShapefileFeatureTable(name:"POI_P")
 //        let pointSHPFileLayer = AGSFeatureLayer(featureTable:pointSHPFileTable)
@@ -165,16 +168,16 @@ class ViewController: UIViewController {
         let defaultSelectedSegmentIndex = segmentedController.selectedSegmentIndex
         if (defaultSelectedSegmentIndex == 0) {
             self.map.operationalLayers.add(tiledLayerImage)
-            self.map.operationalLayers.add(polygonSHPFileLayer)
-            self.map.operationalLayers.add(lineSHPFileLayer)
+//            self.map.operationalLayers.add(polygonSHPFileLayer)
+//            self.map.operationalLayers.add(lineSHPFileLayer)
 //            self.map.operationalLayers.add(pointSymbol)
         }else{
             self.map.operationalLayers.add(tiledLayerVector)
         }
         self.mapView.map = self.map
         
-        zoom(mapView: mapView, to: polygonSHPFileLayer)
-        featureLayer = polygonSHPFileLayer
+//        zoom(mapView: mapView, to: polygonSHPFileLayer)
+//        featureLayer = polygonSHPFileLayer
 }
 
     override func didReceiveMemoryWarning() {
@@ -210,10 +213,18 @@ class ViewController: UIViewController {
         let cgrect = CGRect(x: 0, y: 30, width: 0, height: 0)
         popover.present(from: cgrect, in: xcuiviewButton0, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
         
+        menu.delegate = self
+        self.popover = popover
     }
 
     func xcuiviewButton1Action() {
         print("点击了SHP按钮，将加载shape file数据。")
+        let panoviewController = PanoViewController()
+        let panoView = UINavigationController(rootViewController:panoviewController)
+        let panoPopover = UIPopoverController(contentViewController: panoView)
+        panoPopover.contentSize = CGSize(width:768 - 50, height:768 - 50)
+        let cgrect = CGRect(x: 0, y: 30, width: 0, height: 0)
+        panoPopover.present(from: cgrect, in: xcuiviewButton1, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
     }
     
     func xcuiviewButton2Action() {
@@ -286,6 +297,17 @@ class ViewController: UIViewController {
 //            }
         }
     }
-
+    func menuTableViewController(_ vc: XCmenuTableViewController!, didSelectUrl url: AGSArcGISTiledLayer!) {
+        if (url != nil) {
+            self.map.operationalLayers.remove(Any)
+            self.map.operationalLayers.add(url)
+            self.popover.dismiss(animated: true)
+            print("加载")
+        }else{
+            self.map.operationalLayers.remove(Any)
+            self.popover.dismiss(animated: true)
+            print("移除")
+        }
+    }
 }
 

@@ -19,7 +19,7 @@
     
     NSURL* url1 = [NSURL URLWithString: @"http://220.191.216.230:6080/arcgis/rest/services/dghy_dzdt/MapServer"];
     AGSArcGISTiledLayer *layer1 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url1];
-    NSURL* url2 = [NSURL URLWithString: @"http://services.arcgisonline.com/arcgis/rest/services/World_Terrain_Base/MapServer"];
+    NSURL* url2 = [NSURL URLWithString: @"http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer"];
     AGSArcGISTiledLayer *layer2 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url2];
     NSURL* url3 = [NSURL URLWithString: @"http://services.arcgisonline.com/arcgis/rest/services/ESRI_Imagery_World_2D/MapServer"];
     AGSArcGISTiledLayer *layer3 = [AGSArcGISTiledLayer ArcGISTiledLayerWithURL:url3];
@@ -34,6 +34,7 @@
     CGFloat w = 250;
     CGFloat h = self.menuTable.count * 44;
     self.preferredContentSize = CGSizeMake(w, h);
+    printf("~~~~~~~~~~~~~~~~~~~~~\n");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +43,7 @@
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    printf("00000000000000000000 \n");
     return self.menuTable.count;
 }
 
@@ -52,7 +54,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     cell.textLabel.text = self.menuTable[indexPath.row];
-    
+    printf("1111111111111111111111 \n");
     return cell;
 }
 
@@ -61,11 +63,13 @@
         NSInteger *row = indexPath.row;
         NSString *url = [_urlTable objectAtIndex:row];
         [self.delegate menuTableViewController:self didSelectUrl:url];
+        printf("选择了 %d 行.\n",row);
     }
 }
 
 - (void)onClickOKbtn:(id)paramSender{
-    [self.delegate menuTableViewController:self didSelectUrl:0];
+    printf("点击了清除按钮");
+    [self.delegate menuTableViewController:self didSelectUrl:nil];
 }
 
 @end

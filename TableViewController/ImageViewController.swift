@@ -39,6 +39,7 @@ class ImageViewController: UIViewController {
     }
     
     func shutDown()  {
-        print("点击关闭按钮")
+        self.dismiss(animated: true, completion: nil)
+        print("点击关闭(详情)按钮")
     }    
 }

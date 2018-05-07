@@ -48,6 +48,7 @@
 		526400812092091900F667AE /* BOU_PY_P.sbn in Resources */ = {isa = PBXBuildFile; fileRef = 5264006C2092091800F667AE /* BOU_PY_P.sbn */; };
 		526400822092091900F667AE /* POI_P.prj in Resources */ = {isa = PBXBuildFile; fileRef = 5264006D2092091900F667AE /* POI_P.prj */; };
 		526400832092091900F667AE /* POI_P.shx in Resources */ = {isa = PBXBuildFile; fileRef = 5264006E2092091900F667AE /* POI_P.shx */; };
+		528DD41220A09F3F004D8322 /* PanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528DD41120A09F3F004D8322 /* PanoViewController.swift */; };
 		5294AECC203EDD0F0050A4CE /* CompassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294AECB203EDD0F0050A4CE /* CompassButton.swift */; };
 		5294AED0203EE4070050A4CE /* compass1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5294AECF203EE4070050A4CE /* compass1.png */; };
 		52A1C4C3202C7A0100D65863 /* XCUIViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A1C4C2202C7A0000D65863 /* XCUIViewButton.m */; };
@@ -109,6 +110,7 @@
 		5264006C2092091800F667AE /* BOU_PY_P.sbn */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOU_PY_P.sbn; sourceTree = "<group>"; };
 		5264006D2092091900F667AE /* POI_P.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = POI_P.prj; sourceTree = "<group>"; };
 		5264006E2092091900F667AE /* POI_P.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = POI_P.shx; sourceTree = "<group>"; };
+		528DD41120A09F3F004D8322 /* PanoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoViewController.swift; sourceTree = "<group>"; };
 		5294AECB203EDD0F0050A4CE /* CompassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassButton.swift; sourceTree = "<group>"; };
 		5294AECF203EE4070050A4CE /* compass1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass1.png; sourceTree = "<group>"; };
 		52A1C4C1202C7A0000D65863 /* XCUIViewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCUIViewButton.h; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				52FDDDA8209C433F001AC0E1 /* AtlasViewController.swift */,
 				5207F309209D993200D008B6 /* ImageViewController.swift */,
 				5207F30B209D9B4B00D008B6 /* picCollectionViewCell.swift */,
+				528DD41120A09F3F004D8322 /* PanoViewController.swift */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				52FDDDA9209C433F001AC0E1 /* AtlasViewController.swift in Sources */,
 				52FAFB58202BF16200869281 /* XCUILabel.m in Sources */,
 				3E15A1471AE84CEA00A7D40D /* AppDelegate.swift in Sources */,
+				528DD41220A09F3F004D8322 /* PanoViewController.swift in Sources */,
 				52CDBAE42093477D00B7722F /* XCmenuTableViewController.m in Sources */,
 				5238C936202D81A60084CAEB /* XCUISegmentedControl.swift in Sources */,
 				5294AECC203EDD0F0050A4CE /* CompassButton.swift in Sources */,

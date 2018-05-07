@@ -83,6 +83,7 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     }
       
     func shutDown()  {
-        print("点击关闭按钮")
+        self.dismiss(animated: true, completion: nil)
+        print("点击关闭（规划图集）按钮")
     }
 }
