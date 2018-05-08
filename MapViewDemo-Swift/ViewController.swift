@@ -27,6 +27,7 @@ class ViewController: UIViewController,XCmenuTableViewControllerDelegate {
     let xcuiviewButton0 = XCUIViewButton()
     let xcuiviewButton1 = XCUIViewButton()
     let xcuiviewButton2 = XCUIViewButton()
+//    var alertController:AlertController!
     let xcuiviewButton3 = XCUIViewButton()
     let xcuiviewButton4 = XCUIViewButton()
     var atlasPopover:UIPopoverController!
@@ -229,7 +230,12 @@ class ViewController: UIViewController,XCmenuTableViewControllerDelegate {
     
     func xcuiviewButton2Action() {
         let tdtDQ = AGSArcGISTiledLayer(url: URL(string:"http://220.191.216.230:6080/arcgis/rest/services/dghy_dzdt/MapServer")!)
-        self.map.operationalLayers.add(tdtDQ)
+        let loadStatusString = self.mapDidLoadStatus(self.map.loadStatus)
+        if (loadStatusString == "Loaded") {
+            self.map.operationalLayers.add(tdtDQ)
+
+        }
+        
     }
     
     func xcuiviewButton3Action() {
@@ -290,7 +296,6 @@ class ViewController: UIViewController,XCmenuTableViewControllerDelegate {
                 print("Couldn't load the shapefile \(error!.localizedDescription)")
                 return
             }
-            
             // Once the layer's metadata has loaded, we can read its full extent.
 //            if let initialExtent = featureLayer.fullExtent {
 //                mapView.setViewpointGeometry(initialExtent)
@@ -299,14 +304,41 @@ class ViewController: UIViewController,XCmenuTableViewControllerDelegate {
     }
     func menuTableViewController(_ vc: XCmenuTableViewController!, didSelectUrl url: AGSArcGISTiledLayer!) {
         if (url != nil) {
-            self.map.operationalLayers.remove(Any)
+            self.map.operationalLayers.remove(url)
             self.map.operationalLayers.add(url)
             self.popover.dismiss(animated: true)
             print("加载")
         }else{
-            self.map.operationalLayers.remove(Any)
+            self.map.operationalLayers.remove(url)
             self.popover.dismiss(animated: true)
             print("移除")
+        }
+    }
+    func mapDidLoadStatus(_ status: AGSLoadStatus) -> String {
+        let alertController = UIAlertController(title: "网络提示", message: "请连接网络后重试！", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+        alertController.addAction(okAction)
+
+        switch status {
+        case .failedToLoad:
+            print("Failed_To_Load")
+            self.present(alertController, animated: true, completion: nil)
+            return "Failed_To_Load"
+        case .loaded:
+            print("Loaded")
+            self.present(alertController, animated: true, completion: nil)
+            return "Loaded"
+        case .loading:
+            print("Loading")
+            return "Loading"
+        case .notLoaded:
+            print("Not_Loaded")
+            self.present(alertController, animated: true, completion: nil)
+            return "Not_Loaded"
+        default:
+            print("Unknown")
+            self.present(alertController, animated: true, completion: nil)
+            return "Unknown"
         }
     }
 }

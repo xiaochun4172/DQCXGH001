@@ -56,6 +56,7 @@
 		52A1C4CA202C805100D65863 /* DeQing.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A1C4C7202C805000D65863 /* DeQing.png */; };
 		52A1C4CB202C805100D65863 /* layer.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A1C4C8202C805100D65863 /* layer.png */; };
 		52A1C4CC202C805100D65863 /* B_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52A1C4C9202C805100D65863 /* B_1.jpg */; };
+		52BCD65C20A138DD00BDCA63 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BCD65B20A138DD00BDCA63 /* AlertController.swift */; };
 		52CDBADE2093405B00B7722F /* planning.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CDBADD2093405B00B7722F /* planning.png */; };
 		52CDBAE02093428A00B7722F /* shp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52CDBADF2093428900B7722F /* shp.jpg */; };
 		52CDBAE42093477D00B7722F /* XCmenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CDBAE22093477D00B7722F /* XCmenuTableViewController.m */; };
@@ -120,6 +121,7 @@
 		52A1C4C7202C805000D65863 /* DeQing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeQing.png; sourceTree = "<group>"; };
 		52A1C4C8202C805100D65863 /* layer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = layer.png; sourceTree = "<group>"; };
 		52A1C4C9202C805100D65863 /* B_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B_1.jpg; sourceTree = "<group>"; };
+		52BCD65B20A138DD00BDCA63 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		52CDBADD2093405B00B7722F /* planning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planning.png; sourceTree = "<group>"; };
 		52CDBADF2093428900B7722F /* shp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shp.jpg; sourceTree = "<group>"; };
 		52CDBAE22093477D00B7722F /* XCmenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCmenuTableViewController.m; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				5207F309209D993200D008B6 /* ImageViewController.swift */,
 				5207F30B209D9B4B00D008B6 /* picCollectionViewCell.swift */,
 				528DD41120A09F3F004D8322 /* PanoViewController.swift */,
+				52BCD65B20A138DD00BDCA63 /* AlertController.swift */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BCD65C20A138DD00BDCA63 /* AlertController.swift in Sources */,
 				5207F30C209D9B4B00D008B6 /* picCollectionViewCell.swift in Sources */,
 				52A1C4C6202C7E6700D65863 /* UIView+Extension.m in Sources */,
 				52A1C4C3202C7A0100D65863 /* XCUIViewButton.m in Sources */,
