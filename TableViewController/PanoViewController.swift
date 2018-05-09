@@ -10,10 +10,7 @@ import Foundation
 class PanoViewController: UIViewController {
     
     let length = 768 - 50
-    
-    var collectionView:UICollectionView!
-    var layout:UICollectionViewFlowLayout!
-    var dataArr:NSMutableArray = NSMutableArray.init()
+    var uiWebView:UIWebView!
     
     override func viewDidLoad() {
         super .viewDidLoad()
@@ -25,7 +22,21 @@ class PanoViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
         
         rightBarButton.addTarget(self, action: #selector(shutDown), for: .touchUpInside)
+        self.showPano()
 }
+
+    public func showPano() -> Void {
+        var webStr = "http://weixin.dqplanning.gov.cn/zxdq/web/home/pano"
+        var url = NSURL(string: webStr)!
+        var request = NSURLRequest.init(url: url as URL)
+        uiWebView = UIWebView.init(frame: CGRect.init(x: 0, y: 0, width: length, height: length))
+        uiWebView.contentMode = UIViewContentMode.scaleAspectFit
+        uiWebView.loadRequest(request as URLRequest)
+        uiWebView.scalesPageToFit = true
+        self.view.addSubview(uiWebView)
+        print("www.baidu.com")
+    }
+    
     func shutDown()  {
         self.dismiss(animated: true, completion: nil)
         print("点击关闭按钮2222222222222")
