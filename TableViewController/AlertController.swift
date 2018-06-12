@@ -8,13 +8,20 @@
 
 import Foundation
 
-class AlertController: UIAlertController {
+class AlertController: UIViewController {
     override func viewDidLoad() {
         super .viewDidLoad()
 
-        self.title = "网络提示"
-        self.message = "请连接网络后重试!"
-        let okAction = UIAlertAction(title: "确定", style: .default, handler: nil)
-        self.addAction(okAction)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let alertController = UIAlertController(title: "网络提示", message: "请连接网络后重试！", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "确定", style: .destructive, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }

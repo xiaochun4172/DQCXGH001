@@ -46,7 +46,7 @@ func createCollectionView() -> Void {
     layout = UICollectionViewFlowLayout.init()//初始化UICollectionViewFlowLayout
     layout.minimumLineSpacing = 10//垂直最小距离
     layout.minimumInteritemSpacing = 10//水平最小距离
-    layout.itemSize = CGSize.init(width: 100, height:130)//item的大小
+    layout.itemSize = CGSize.init(width: 100, height:130)//item的大小(图片的cell大小)
     
     collectionView = UICollectionView.init(frame: CGRect.init(x: 20, y: 20, width: length, height: length), collectionViewLayout: layout)//初始化UICollectionView
     collectionView.backgroundColor = UIColor.white//背景色

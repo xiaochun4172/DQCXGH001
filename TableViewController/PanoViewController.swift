@@ -7,34 +7,41 @@
 //
 
 import Foundation
-class PanoViewController: UIViewController {
+class PanoViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     
     let length = 768 - 50
     var uiWebView:UIWebView!
     
     override func viewDidLoad() {
-        super .viewDidLoad()
+        super .viewDidLoad()      
         
+        self.preferredContentSize = self.view.bounds.size
         self.title = String("全景德清")
         let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         rightBarButton.setImage(UIImage.init(named: "shutdown.png"), for: .normal)
         rightBarButton.imageEdgeInsets = UIEdgeInsetsMake(2, 20, 2, 20)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
         
-        rightBarButton.addTarget(self, action: #selector(shutDown), for: .touchUpInside)
+        let leftBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        leftBarButton.setImage(UIImage.init(named: "shutdown.png"), for: .normal)
+        leftBarButton.imageEdgeInsets = UIEdgeInsetsMake(2, 20, 2, 20)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
+        
+        leftBarButton.addTarget(self, action: #selector(shutDown), for: .touchUpInside)
         self.showPano()
 }
 
     public func showPano() -> Void {
-        var webStr = "http://weixin.dqplanning.gov.cn/zxdq/web/home/pano"
-        var url = NSURL(string: webStr)!
-        var request = NSURLRequest.init(url: url as URL)
-        uiWebView = UIWebView.init(frame: CGRect.init(x: 0, y: 0, width: length, height: length))
+        let url = NSURL(string: "http://weixin.dqplanning.gov.cn/zxdq/web/home/pano")!
+        let request = NSURLRequest.init(url: url as URL)
+        //全景德清宽度和高度需要调整，需要根据popover的宽度和高度来适配
+//        uiWebView = UIWebView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+        uiWebView = UIWebView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
         uiWebView.contentMode = UIViewContentMode.scaleAspectFit
         uiWebView.loadRequest(request as URLRequest)
         uiWebView.scalesPageToFit = true
         self.view.addSubview(uiWebView)
-        print("www.baidu.com")
+        print("全景点加载完成")
     }
     
     func shutDown()  {

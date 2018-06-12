@@ -219,21 +219,25 @@ class ViewController: UIViewController,XCmenuTableViewControllerDelegate {
     }
 
     func xcuiviewButton1Action() {
-        print("点击了SHP按钮，将加载shape file数据。")
+        print("点击了全景德清按钮，将加载全景点。")
         let panoviewController = PanoViewController()
         let panoView = UINavigationController(rootViewController:panoviewController)
         let panoPopover = UIPopoverController(contentViewController: panoView)
-        panoPopover.contentSize = CGSize(width:768 - 50, height:768 - 50)
+        panoPopover.contentSize = CGSize(width:300, height:300)
         let cgrect = CGRect(x: 0, y: 30, width: 0, height: 0)
         panoPopover.present(from: cgrect, in: xcuiviewButton1, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
+       self.popover = panoPopover
+        
     }
     
     func xcuiviewButton2Action() {
-        let tdtDQ = AGSArcGISTiledLayer(url: URL(string:"http://220.191.216.230:6080/arcgis/rest/services/dghy_dzdt/MapServer")!)
+        let tdtDQ = AGSArcGISTiledLayer(url: URL(string:"http://220.191.216.230:6080/qarcgis/rest/services/dghy_dzdt/MapServer")!)
         let loadStatusString = self.mapDidLoadStatus(self.map.loadStatus)
         if (loadStatusString == "Loaded") {
             self.map.operationalLayers.add(tdtDQ)
-
+//            let loadStatusString = self.mapDidLoadStatus(self.map.loadStatus)
+        }else{
+            self.map.operationalLayers.remove(tdtDQ)
         }
         
     }
@@ -247,10 +251,17 @@ class ViewController: UIViewController,XCmenuTableViewControllerDelegate {
         let viewController = AtlasViewController()
         let atlasView = UINavigationController(rootViewController:viewController)
         let atlasPopover = UIPopoverController(contentViewController: atlasView)
-        atlasPopover.contentSize = CGSize(width:768 - 50, height:768 - 50)
-        let cgrect = CGRect(x: 0, y: 0, width: 0, height: 0)
+        let cgrect = CGRect(x: 0, y: 30, width: 0, height: 0)
         atlasPopover.present(from: cgrect, in: xcuiviewButton4, permittedArrowDirections: UIPopoverArrowDirection.right, animated: true)
         
+        let deviceOrientationIsPortrait = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
+        if (deviceOrientationIsPortrait) {
+            atlasPopover.contentSize = CGSize(width: 768 - 50, height: 1024 - 50)
+            print("||||||||||||||||||||||||竖屏打开规划图集||||||||||||||||||||||||")
+        }else{
+            atlasPopover.contentSize = CGSize(width: 1024 - 50, height: 768 - 50)
+            print("------------------------横屏打开规划图集------------------------")
+        }
         let width = atlasPopover.contentSize.width
         let height = atlasPopover.contentSize.height
         print("width,height",width,height)
@@ -318,7 +329,8 @@ class ViewController: UIViewController,XCmenuTableViewControllerDelegate {
         let alertController = UIAlertController(title: "网络提示", message: "请连接网络后重试！", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "确定", style: .default, handler: nil)
         alertController.addAction(okAction)
-
+//        let alertController = AlertController()
+        
         switch status {
         case .failedToLoad:
             print("Failed_To_Load")
@@ -326,7 +338,6 @@ class ViewController: UIViewController,XCmenuTableViewControllerDelegate {
             return "Failed_To_Load"
         case .loaded:
             print("Loaded")
-            self.present(alertController, animated: true, completion: nil)
             return "Loaded"
         case .loading:
             print("Loading")
